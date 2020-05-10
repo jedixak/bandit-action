@@ -1,0 +1,20 @@
+# action.yml
+name: 'Bandit'
+description: 'GitHub bandit action'
+branding:
+  icon: 'shield'
+  color: 'yellow'
+inputs:
+  path:
+    description: 'File or directory to run bandit on'
+    required: false
+    default: '.'
+outputs:
+  output:
+    description: 'Output'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+    - ${{ inputs.disable }}
