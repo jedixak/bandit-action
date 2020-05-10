@@ -7,5 +7,5 @@ RUN apk add gcc musl-dev && \
 
 WORKDIR /
 
-CMD /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
